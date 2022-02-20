@@ -1,6 +1,7 @@
 # Hub88
 
-- 
+- Need to generate Key Pair first <br />
+   ssh-keygen -f mykeypair   <br />
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
 
