@@ -13,6 +13,17 @@ AWS_SECRET_KEY = "ZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZ"                       <br
 
 - Run terraform apply --auto-approve or terraform apply(Enter yes at prompt)      <br /> 
   It will create all the resources and copy the IP details to **ansible/inventory** file. After creation of instances ansible-playbook command will run to install required software like python, docker and create **dynamic index.html** file for each EC2 instance. Ansible will create nginx container on every instance with different index.html.<br />
+  
+ - In case, ansible-playbook fails to run at the time of terraform apply, then run command from the code directory file (command prompt ) where instance.tf is placed:  <br />
+ 
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ansible/inventory ansible/install_docker.yaml ansible/install_nginx.yaml --private-key '/home/ubuntu/Hub88/mykeypair' -e log_group=docker_logs   <br />
+Where Hub88 is directory and my private key pair is mentioned at root path of the directory and need to mention the real value of variables for e.g. where I need to send my log in Cloudwatch Log Group. <br  />
+
+- In case of running from the ansible folder, run below mentioned command:  <br />
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory install_docker.yaml install_nginx.yaml --private-key '/home/ubuntu/Hub88/mykeypair' -e log_group=docker_logs   <br />
+
+- I have pasted the sample template of inventory which will get generated from terraform. If you are destroying the created resource, please remove those Ips from inventory, otherwise, it will throw error while running ansible-playbook command.   <br />
+
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
 
