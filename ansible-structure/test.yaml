@@ -1,0 +1,6 @@
+---
+- name: Generate Configuration files
+  hosts: all
+  
+  roles: 
+    - router

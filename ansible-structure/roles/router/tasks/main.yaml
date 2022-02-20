@@ -1,0 +1,4 @@
+---
+- name: Generate configuration files
+  template: src=router.j2  dest=/home/ubuntu/{{item.hostname}}.html
+  with_items: "{{ routers }}"

@@ -1,0 +1,8 @@
+---
+routers:
+  - hostname: index1
+    username: server1
+  - hostname: index2
+    username: server2
+  - hostname: index3
+    username: server3
