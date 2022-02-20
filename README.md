@@ -37,7 +37,9 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
 
 
 - Since, this is a small task of ansible. I didn't create tree structure of ansible directory. Although, this is the proper format of ansible to run the ansible playbook. <br />
-![image](https://user-images.githubusercontent.com/47385113/154835821-f9ec9075-ff52-407d-8512-5f2787dae7a2.png)
+![image](https://user-images.githubusercontent.com/47385113/154835821-f9ec9075-ff52-407d-8512-5f2787dae7a2.png)    <br />
+
+Added Ansible Directory structure for refernces. <br />
 
 
 
