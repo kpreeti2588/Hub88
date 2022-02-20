@@ -1,5 +1,10 @@
 # Hub88
 
+***Pre-Requisites on Local Machine from where code is running:**
+*pip3 install ansible
+*ansible-galaxy collection install community.docker
+*python3 -m pip list |grep docker
+
 - Need to generate Key Pair first <br />
    **ssh-keygen -f mykeypair**   <br />
    
@@ -23,7 +28,9 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
 
   **Note**: I have pasted the sample template of inventory which will get generated from terraform. If you are destroying the created resource, please remove those Ips from inventory, otherwise, it will throw error while running ansible-playbook command.   <br />
   
-- In case of container creation give error, then please check for the **correct IAM role creation** OR set **docker daemon connection with AWS** in your local or from remote machine
+- In case of container creation give error, then please check for the **correct IAM role creation** OR set **docker daemon connection with AWS** in your local or from remote machine. Either of the option will work.  <br />
+
+- On Remote machine, all pre-requisites are fulfilled by ansible/install_nginx.yaml
 
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
