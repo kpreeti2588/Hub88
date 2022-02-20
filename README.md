@@ -11,7 +11,8 @@ AWS_SECRET_KEY = "ZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZ"                       <br
 
 - Run terraform plan to see the changes  planned to execute in the infra.       <br />
 
-- Run terraform apply --auto-approve or terraform apply(Enter yes at prompt)      <br />
+- Run terraform apply --auto-approve or terraform apply(Enter yes at prompt)      <br /> 
+  It will create all the resources and copy the IP details to **ansible/inventory** file. After creation of instances ansible-playbook command will run to install required software like python, docker and create **dynamic index.html** file for each EC2 instance. Ansible will create nginx container on every instance with different index.html.<br />
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
 
