@@ -21,7 +21,7 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
 - In case of running from the ansible folder, run below mentioned command:  <br />
 **ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory install_docker.yaml install_nginx.yaml --private-key '/home/ubuntu/Hub88/mykeypair' -e log_group=docker_logs** <br />
 
-**Note**: I have pasted the sample template of inventory which will get generated from terraform. If you are destroying the created resource, please remove those Ips from inventory, otherwise, it will throw error while running ansible-playbook command.   <br />
+  **Note**: I have pasted the sample template of inventory which will get generated from terraform. If you are destroying the created resource, please remove those Ips from inventory, otherwise, it will throw error while running ansible-playbook command.   <br />
 
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
