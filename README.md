@@ -2,6 +2,10 @@
 
 - Need to generate Key Pair first <br />
    ssh-keygen -f mykeypair   <br />
+   
+- Create terraform.tfvars file. Place AWS Access Key and Secret Access Key in it
+AWS_ACCESS_KEY = "AXXXXXXXXXXXXXXXC"
+AWS_SECRET_KEY = "ZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZ"
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
 
