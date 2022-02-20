@@ -1,9 +1,9 @@
 # Hub88
 
-***Pre-Requisites on Local Machine from where code is running:**
-*pip3 install ansible
-*ansible-galaxy collection install community.docker
-*python3 -m pip list |grep docker
+***Pre-Requisites on Local Machine from where code is running:**  <br />
+*pip3 install ansible   <br />
+*ansible-galaxy collection install community.docker    <br />
+*python3 -m pip list |grep docker    <br />
 
 - Need to generate Key Pair first <br />
    **ssh-keygen -f mykeypair**   <br />
@@ -30,7 +30,7 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
   
 - In case of container creation give error, then please check for the **correct IAM role creation** OR set **docker daemon connection with AWS** in your local or from remote machine. Either of the option will work.  <br />
 
-- On Remote machine, all pre-requisites are fulfilled by ansible/install_nginx.yaml
+- On Remote machine, all pre-requisites are fulfilled by ansible/install_nginx.yaml    <br />
 
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
