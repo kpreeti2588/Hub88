@@ -3,9 +3,15 @@
 - Need to generate Key Pair first <br />
    ssh-keygen -f mykeypair   <br />
    
-- Create terraform.tfvars file. Place AWS Access Key and Secret Access Key in it
-AWS_ACCESS_KEY = "AXXXXXXXXXXXXXXXC"
-AWS_SECRET_KEY = "ZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZ"
+- Create terraform.tfvars file. Place AWS Access Key and Secret Access Key in it       <br />
+AWS_ACCESS_KEY = "AXXXXXXXXXXXXXXXC"                            <br />
+AWS_SECRET_KEY = "ZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXZ"                       <br />
+
+- Run terraform init to download the required providers     <br />
+
+- Run terraform plan to see the changes  planned to execute in the infra.       <br />
+
+- Run terraform apply --auto-approve or terraform apply(Enter yes at prompt)      <br />
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
 
