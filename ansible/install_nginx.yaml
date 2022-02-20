@@ -1,0 +1,29 @@
+---
+- hosts: all
+  
+  become: yes  
+  tasks:
+
+  - name: Generate nginx configuration files
+    template: src=template.j2  dest=/home/ubuntu/index.html
+
+  - name: Create network
+    community.docker.docker_network:
+      name: nginx
+
+  - name: Deploy nginx container
+    community.docker.docker_container: 
+      name: nginx
+      image: nginx:latest
+      ports:
+        - "80:80" 
+      log_driver: "awslogs"
+      log_options:
+        awslogs-group: "{{ log_group }}"
+        awslogs-region: "us-east-1"
+        awslogs-stream: "hub88"
+      networks: 
+        - name: nginx
+
+  - name: Replace index file content into existing container
+    shell: docker cp index.html nginx:/usr/share/nginx/html/index.html
