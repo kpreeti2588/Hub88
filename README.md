@@ -22,6 +22,8 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
 **ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory install_docker.yaml install_nginx.yaml --private-key '/home/ubuntu/Hub88/mykeypair' -e log_group=docker_logs** <br />
 
   **Note**: I have pasted the sample template of inventory which will get generated from terraform. If you are destroying the created resource, please remove those Ips from inventory, otherwise, it will throw error while running ansible-playbook command.   <br />
+  
+- In case of container creation give error, then please check for the **correct IAM role creation** OR set **docker daemon connection with AWS** in your local or from remote machine
 
 
 - **Please use Terraform aws provider ~>3.0.**   <br /> 
@@ -42,7 +44,8 @@ Where Hub88 is directory and my private key pair is mentioned at root path of th
 
 _**REFERENCES:**_  <br />
 
-https://registry.terraform.io/providers/hashicorp/kubernetes/2.8.0    <br />
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs    <br />
+https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html   <br />
 For Terraform certification peparation, I referred few udemy courses:  <br />
 https://www.udemy.com/course/hashicorp-certified-terraform-associate-step-by-step/    <br />
 https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/     <br />
