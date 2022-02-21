@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "tg" {
 
 # Target Group Attachment with Instance
 resource "aws_alb_target_group_attachment" "tgattachment" {
-  count            = length(aws_instance.hub88.*.id) == 3 ? 3 : 0
+  count            = var.in_count
   target_group_arn = aws_lb_target_group.tg.arn
   target_id        = element(aws_instance.hub88.*.id, count.index)
 }

@@ -47,7 +47,7 @@ resource "aws_route_table" "main-public" {
 # route associations public
 
 resource "aws_route_table_association" "public_rt_association" {
-  count          = length(aws_subnet.public_subnet) == 3 ? 3 : 0
+  count          = var.in_count
   route_table_id = aws_route_table.main-public.id
   subnet_id      = element(aws_subnet.public_subnet.*.id, count.index)
 }
